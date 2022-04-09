@@ -1,0 +1,147 @@
+{
+	"name": "Lua",
+	"scopeName": "source.lua",
+	"patterns": [
+		{
+			"begin": "--\\[\\[",
+			"end": "\\]\\]",
+			"name": "comment.block.lua"
+		},
+		{
+			"match": "--.*\\n",
+			"name": "comment.line.double-dash.lua"
+		},
+		{
+			"match": "\\bbreak|do|else|elseif|end|for|function|goto|if|in|local|repeat|return|then|until|while\\b",
+			"name": "keyword.control.lua"
+		},
+		{
+			"match": "(?<=\\bgoto)(?:\\s+)([a-zA-Z_][a-zA-Z0-9_]*)",
+			"captures": {
+				"1": {
+					"name": "entity.tag.name.lua"
+				}
+			}
+		},
+		{
+			"match": "::[a-zA-Z_][a-zA-Z0-9_]*::",
+			"name": "entity.name.tag.lua"
+		},
+		{
+			"match": "\\band|not|or\\b",
+			"name": "keyword.operator.lua"
+		},
+		{
+			"match": "\\+|-|\\*|\\/|%|\\^|#|&|~|\\||<<|>>|\\/\\/|==|~=|<=|>=|<|>|=|(?<!\\.)\\.\\.(?!\\.)",
+			"name": "keyword.operator.lua"
+		},
+		{
+			"match": "(?<![\\w\\d.])0[xX][0-9A-Fa-f]+(\\.[0-9A-Fa-f]+)?([eE]-?\\d*)?([pP][-+]\\d+)?",
+			"name": "constant.numeric.float.hexadecimal.lua"
+		},
+		{
+			"match": "(?<![\\w\\d.])0[xX][0-9A-Fa-f]+(?![pPeE.0-9])",
+			"name": "constant.numeric.integer.hexadecimal.lua"
+		},
+		{
+			"match": "(?<![\\w\\d.])\\d+(\\.\\d+)?([eE]-?\\d*)?",
+			"name": "constant.numeric.float.lua"
+		},
+		{
+			"match": "(?<![\\w\\d.])\\d+(?![pPeE.0-9])",
+			"name": "constant.numeric.integer.lua"
+		},
+		{
+			"match": "\\btrue|false\\b",
+			"name": "constant.language.lua"
+		},
+		{
+			"match": "\\bnil\\b",
+			"name": "constant.language.nil.lua"
+		},
+		{
+			"begin": "\\[(=*)\\[",
+			"end": "\\]\\1\\]",
+			"name": "string.quoted.other.multiline.lua",
+			"patterns": [
+				{
+					"include": "#escape_character"
+				}
+			]
+		},
+		{
+			"begin": "'",
+			"end": "'(?=[ \\t]*)|(?=\\n)",
+			"name": "string.quoted.single.lua",
+			"patterns": [
+				{
+					"include": "#escape_character"
+				}
+			]
+		},
+		{
+			"begin": "\"",
+			"end": "\"(?=[ \\t]*)|(?=\\n)",
+			"name": "string.quoted.double.lua",
+			"patterns": [
+				{
+					"include": "#escape_character"
+				}
+			]
+		},
+		{
+			"match": "[a-zA-Z_][a-zA-Z0-9_]*(?=\\()",
+			"name": "entity.name.function.lua"
+		},
+		{
+			"match": "\\b_G|_VERSION|arg|assert|bit32|collectgarbage|coroutine|debug|dofile|error|getmetatable|io|ipairs|load|loadfile|math|next|os|package|pairs|pcall|print|rawequal|rawget|rawlen|rawset|require|select|setmetatable|string|table|tonumber|tostring|type|utf8|xpcall\\b",
+			"name": "support.variable.lua"
+		},
+		{
+			"match": "[a-zA-Z_][a-zA-Z0-9_]*",
+			"name": "variable.other.lua"
+		},
+		{
+			"match": "(?<!\\.)\\.{3}(?!\\.)",
+			"name": "variable.other.variadic.lua"
+		},
+		{
+			"match": "[.:,()\\[\\]]",
+			"name": "punctuation.lua"
+		},
+		{
+			"match": "[{}]",
+			"name": "punctuation.initializer.lua"
+		}
+	],
+	"repository": {
+		"escape_character": {
+			"patterns": [
+				{
+					"match": "\\\\[abfnrtv\\\\\"'\\n]",
+					"name": "string.character.escape.lua"
+				},
+				{
+					"match": "\\\\z[\\n\\t ]*",
+					"name": "string.character.escape.lua"
+				},
+				{
+					"match": "\\\\\\d{1,3}",
+					"name": "string.character.escape.byte.lua"
+				},
+				{
+					"match": "\\\\x[0-9A-Fa-f][0-9A-Fa-f]",
+					"name": "string.character.escape.byte.lua"
+				},
+				{
+					"match": "\\\\u\\{[0-9A-Fa-f]+\\}",
+					"name": "string.character.escape.unicode.lua"
+				},
+				{
+					"match": "\\\\.",
+					"name": "invalid.illegal.character.escape.lua"
+				}
+			]
+		}
+	}
+}

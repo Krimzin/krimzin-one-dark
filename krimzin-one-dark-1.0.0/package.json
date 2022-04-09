@@ -1,0 +1,28 @@
+{
+    "name": "krimzin-one-dark",
+    "displayName": "Krimzin One Dark",
+    "description": "A theme inspired by Atom One Dark.",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.66.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Krimzin One Dark",
+                "uiTheme": "vs-dark",
+                "path": "./themes/krimzin-one-dark-color-theme.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "lua",
+                "scopeName": "source.lua",
+                "path": "./syntaxes/lua.tmLanguage.json"
+            }
+        ]
+    }
+}
