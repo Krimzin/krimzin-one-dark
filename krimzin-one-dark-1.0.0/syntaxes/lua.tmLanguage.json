@@ -12,7 +12,7 @@
 			"name": "comment.line.double-dash.lua"
 		},
 		{
-			"match": "\\bbreak|do|else|elseif|end|for|function|goto|if|in|local|repeat|return|then|until|while\\b",
+			"match": "\\b(break|do|else|elseif|end|for|function|goto|if|in|local|repeat|return|then|until|while)\\b",
 			"name": "keyword.control.lua"
 		},
 		{
@@ -28,7 +28,7 @@
 			"name": "entity.name.tag.lua"
 		},
 		{
-			"match": "\\band|not|or\\b",
+			"match": "\\b(and|not|or)\\b",
 			"name": "keyword.operator.lua"
 		},
 		{
@@ -52,11 +52,11 @@
 			"name": "constant.numeric.integer.lua"
 		},
 		{
-			"match": "\\btrue|false\\b",
+			"match": "\\b(true|false)\\b",
 			"name": "constant.language.lua"
 		},
 		{
-			"match": "\\bnil\\b",
+			"match": "\\b(nil)\\b",
 			"name": "constant.language.nil.lua"
 		},
 		{
@@ -94,7 +94,7 @@
 			"name": "entity.name.function.lua"
 		},
 		{
-			"match": "\\b_G|_VERSION|arg|assert|bit32|collectgarbage|coroutine|debug|dofile|error|getmetatable|io|ipairs|load|loadfile|math|next|os|package|pairs|pcall|print|rawequal|rawget|rawlen|rawset|require|select|setmetatable|string|table|tonumber|tostring|type|utf8|xpcall\\b",
+			"match": "\\b(_G|_VERSION|arg|assert|bit32|collectgarbage|coroutine|debug|dofile|error|getmetatable|io|ipairs|load|loadfile|math|next|os|package|pairs|pcall|print|rawequal|rawget|rawlen|rawset|require|select|setmetatable|string|table|tonumber|tostring|type|utf8|xpcall)\\b",
 			"name": "support.variable.lua"
 		},
 		{
